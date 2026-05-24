@@ -14,55 +14,55 @@ platform-starter-erp-vue/
 │   │   ├── images/
 │   │   └── styles/
 │   │       ├── base.css
-│   │       └── primevue-theme.css   # Optional overrides
+│   │       └── primevue-theme.css   # optional overrides
 │   │
-│   ├── core/                        # Technical infrastructure (non-business)
+│   ├── core/                        # technical infrastructure (non-business)
 │   │   ├── http/
-│   │   │   ├── httpClient.ts        # Axios instance + interceptors
-│   │   │   └── apiEndpoints.ts      # Centralized base endpoint dictionary
+│   │   │   ├── httpclient.ts        # axios instance + interceptors
+│   │   │   └── apiendpoints.ts      # centralized base endpoint dictionary
 │   │   ├── query/
-│   │   │   └── queryClient.ts       # Vue Query client configuration
+│   │   │   └── queryclient.ts       # vue query client configuration
 │   │   └── error/
-│   │       └── errorHandler.ts      # Global error handler (e.g. for interceptors)
+│   │       └── errorhandler.ts      # global error handler (e.g. for interceptors)
 │   │
-│   ├── features/                    # Self-contained business domains
+│   ├── features/                    # self-contained business domains
 │   │   ├── auth/
-│   │   │   ├── api/                 # Pure HTTP request functions (axios)
-│   │   │   ├── schemas/             # Zod: LoginSchema, RegisterSchema
-│   │   │   ├── composables/         # useAuthQuery, useLoginMutation (TanStack wrappers)
-│   │   │   ├── components/          # Module-private components (LoginForm.vue, etc.)
-│   │   │   └── views/               # Page components (LoginView.vue, RegisterView.vue)
+│   │   │   ├── api/                 # pure http request functions (axios)
+│   │   │   ├── schemas/             # zod: loginschema, registerschema
+│   │   │   ├── composables/         # useauthquery, useloginmutation (tanstack wrappers)
+│   │   │   ├── components/          # module-private components (loginform.vue, etc.)
+│   │   │   └── views/               # page components (loginview.vue, registerview.vue)
 │   │   ├── invoices/
 │   │   ├── users/
 │   │   │   ├── api/
 │   │   │   ├── schemas/
-│   │   │   ├── composables/         # useUsersQuery, useUserTable, useUserForm
+│   │   │   ├── composables/         # useusersquery, useusertable, useuserform
 │   │   │   ├── components/
 │   │   │   └── views/
-│   │   └── ...                      # Other ERP modules
+│   │   └── ...                      # other erp modules
 │   │
-│   ├── shared/                      # Framework-agnostic reusable code
-│   │   ├── components/              # Generic UI components (BaseButton, BaseModal)
+│   ├── shared/                      # framework-agnostic reusable code
+│   │   ├── components/              # generic ui components (basebutton, basemodal)
 │   │   │   ├── ui/
-│   │   │   └── charts/              # ECharts wrappers (KpiChart.vue, etc.)
-│   │   ├── composables/             # Global reactive functions (useDebounce, useMediaQuery)
-│   │   └── utils/                   # Pure functions (formatCurrency, parseDate)
+│   │   │   └── charts/              # echarts wrappers (kpichart.vue, etc.)
+│   │   ├── composables/             # global reactive functions (usedebounce, usemediaquery)
+│   │   └── utils/                   # pure functions (formatcurrency, parsedate)
 │   │
-│   ├── layouts/                     # Page wrappers
-│   │   ├── DefaultLayout.vue        # Sidebar + navbar + <router-view>
-│   │   └── AuthLayout.vue           # Centered layout for login
+│   ├── layouts/                     # page wrappers
+│   │   ├── defaultlayout.vue        # sidebar + navbar + <router-view>
+│   │   └── authlayout.vue           # centered layout for login
 │   │
 │   ├── router/
-│   │   ├── index.ts                 # createRouter and main routes
-│   │   └── guards.ts                # Global beforeEnter guards (authentication)
+│   │   ├── index.ts                 # createrouter and main routes
+│   │   └── guards.ts                # global beforeenter guards (authentication)
 │   │
-│   ├── stores/                      # Global Pinia stores (cross-cutting only)
-│   │   └── themeStore.ts            # Dark/light mode, UI preferences
+│   ├── stores/                      # global pinia stores (cross-cutting only)
+│   │   └── themestore.ts            # dark/light mode, ui preferences
 │   │
-│   ├── App.vue
-│   └── main.ts                      # createApp, use(router), use(pinia), use(queryClient)
+│   ├── app.vue
+│   └── main.ts                      # createapp, use(router), use(pinia), use(queryclient)
 │
-├── tests/                           # Unit and integration tests with Vitest
+├── tests/                           # unit and integration tests with vitest
 │   ├── unit/
 │   └── integration/
 │
