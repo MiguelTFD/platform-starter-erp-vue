@@ -12,7 +12,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@primeuix/themes": "1.0.3",
     "@tanstack/vue-form": "0.39.1",
     "@tanstack/vue-query": "5.62.16",
     "@tanstack/vue-table": "8.20.5",
@@ -29,6 +28,9 @@
   "devDependencies": {
     "@types/node": "18.19.130",
     "@vitejs/plugin-vue": "5.1.4",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
     "typescript": "5.6.2",
     "vite": "5.4.10",
     "vue-tsc": "2.1.8"

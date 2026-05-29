@@ -14,18 +14,18 @@ platform-starter-erp-vue/
 │   │   ├── images/
 │   │   └── styles/
 │   │       ├── base.css
-│   │       └── primevue-theme.css   # optional overrides
+│   │       └── tailwind.css   # optional overrides
 │   │
 │   ├── core/                        # technical infrastructure (non-business)
 │   │   ├── http/
-│   │   │   ├── httpclient.ts        # axios instance + interceptors
-│   │   │   └── apiendpoints.ts      # centralized base endpoint dictionary
+│   │   │   ├── httpClient.ts        # axios instance + interceptors
+│   │   │   └── apiEndpoints.ts      # centralized base endpoint dictionary
 │   │   ├── query/
-│   │   │   └── queryclient.ts       # vue query client configuration
+│   │   │   └── queryClient.ts       # vue query client configuration
 │   │   └── error/
-│   │       └── errorhandler.ts      # global error handler (e.g. for interceptors)
+│   │       └── errorHandler.ts      # global error handler (e.g. for interceptors)
 │   │
-│   ├── features/                    # self-contained business domains
+│   ├── modules/                    # self-contained business domains
 │   │   ├── auth/
 │   │   │   ├── api/                 # pure http request functions (axios)
 │   │   │   ├── schemas/             # zod: loginschema, registerschema
@@ -49,17 +49,17 @@ platform-starter-erp-vue/
 │   │   └── utils/                   # pure functions (formatcurrency, parsedate)
 │   │
 │   ├── layouts/                     # page wrappers
-│   │   ├── defaultlayout.vue        # sidebar + navbar + <router-view>
-│   │   └── authlayout.vue           # centered layout for login
+│   │   ├── Defaultlayout.vue        # sidebar + navbar + <router-view>
+│   │   └── Authlayout.vue           # centered layout for login
 │   │
 │   ├── router/
 │   │   ├── index.ts                 # createrouter and main routes
 │   │   └── guards.ts                # global beforeenter guards (authentication)
 │   │
 │   ├── stores/                      # global pinia stores (cross-cutting only)
-│   │   └── themestore.ts            # dark/light mode, ui preferences
+│   │   └── themeStore.ts            # dark/light mode, ui preferences
 │   │
-│   ├── app.vue
+│   ├── App.vue
 │   └── main.ts                      # createapp, use(router), use(pinia), use(queryclient)
 │
 ├── tests/                           # unit and integration tests with vitest
@@ -68,5 +68,13 @@ platform-starter-erp-vue/
 │
 ├── vite.config.ts
 ├── tsconfig.json
-└── package.json
+├── tsconfig.app.json
+├── tsconfig.node.json
+├── tailwind.config.ts
+├── postcss.config.ts
+├── index.html
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
 ```

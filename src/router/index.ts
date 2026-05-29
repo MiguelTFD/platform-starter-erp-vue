@@ -1,45 +1,51 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 
-// Definición estricta de rutas
 const routes: RouteRecordRaw[] = [
   {
-    // Ruta pública: Login
     path: '/login',
     component: () => import('../layouts/AuthLayout.vue'),
     meta: { requiresAuth: false },
     children: [
       {
-        path: '', // Se carga por defecto al visitar '/login'
+        path: '',
         name: 'Login',
-        component: () => import('../features/auth/views/LoginView.vue'),
+        component: () => import('../modules/auth/views/LoginView.vue'),
       },
     ],
   },
   {
-    // Ruta privada: ERP Core
+    // ZONA PRIVADA (ERP Core)
     path: '/',
-    component: () => import('../layouts/DefaultLayout.vue'), // Lo construiremos después
+    component: () => import('../layouts/DefaultLayout.vue'),
     meta: { requiresAuth: true },
     children: [
       {
-        path: '',
+        path: '', // Ruta por defecto al entrar al ERP
         name: 'Dashboard',
-        // Componente temporal (placeholder) hasta que creemos el módulo de inicio
-        component: () => import('../features/auth/views/LoginView.vue'), 
+        component: () => import('../modules/dashboard/views/DashboardView.vue'),
       },
-      // Aquí anidaremos las rutas de facturas, usuarios, etc.
+      {
+        path: 'invoices',
+        name: 'Invoices',
+        component: () => import('../modules/invoices/views/InvoicesView.vue'),
+      },
+      {
+        path: 'users',
+        name: 'Users',
+        component: () => import('../modules/users/views/UsersView.vue'),
+        // Añadimos metadatos extra para futura validación dura (Defensa en profundidad)
+        meta: { roles: ['ADMIN'] } 
+      },
     ],
   },
   {
-    // Catch-all: Redirección de rutas no encontradas (404)
     path: '/:pathMatch(.*)*',
     redirect: '/',
   }
 ];
 
 export const router = createRouter({
-  // Usamos el API History de HTML5. Sin '#' en la URL.
   history: createWebHistory(),
   routes,
 });

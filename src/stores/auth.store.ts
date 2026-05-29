@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { computed } from 'vue';
 import { useStorage } from '@vueuse/core';
-import type { AuthUser, AuthResponse } from '../features/auth/schemas/auth.schema';
+import type { AuthUser, AuthResponse } from '../modules/auth/schemas/auth.schema';
 
 export const useAuthStore = defineStore('auth', () => {
   // 1. Estado: Persistencia reactiva automatizada (KISS)
