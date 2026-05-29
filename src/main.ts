@@ -10,7 +10,7 @@ import { router } from './router';
 import { setupRouterGuards } from './router/guards';
 
 import './assets/styles/tailwind.css';
-import 'primeicons/primeicons.css';
+
 import './assets/styles/base.css';
 
 const app = createApp(App);

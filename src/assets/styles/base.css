@@ -1,14 +1,1 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 
-  KISS: Mantenemos el CSS global al mínimo. 
-  Cualquier estilo complejo debe encapsularse en los componentes Vue o manejarse por el framework de UI.
-*/
-body {
-  margin: 0;
-  font-family: var(--font-family, sans-serif);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* add your custom base styles here */
